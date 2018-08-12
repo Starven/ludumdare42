@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="menu">
+        <h1 id="title">Civilisation Afloat</h1>
+        <div class="button" onclick="startGame()"> <h2>PLAY</h2> </div>
+        <p>Create a Thriving City on a Tiny, Floating platform!</p>
+        <p>But watch out! Using the Islands resources will diminish its size even further!</p>
+        <p>WASD or Arrow Keys to move the Camera, "R" to Reset Selection</p>
+        <p>Made in under 48 hours for Ludum Dare 42</p>
+    </div>
+    <audio id="music" autoplay loop>
+        
+            <source src="LUDUMDARETRACK.ogg" type="audio/ogg">
+            <source src="LUDUMDARETRACK.mp3" type="audio/mpeg">
+
+    </audio>
+    <canvas id="canvas">Please Update Your Browser</canvas>
+
+    <!-- Scripts
+
+    -->
+
+    <script src="render.js"></script>
+    <script src="screens.js"></script>
+    <script src="buildings.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
