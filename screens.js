@@ -272,7 +272,7 @@ gameScreen.checkTiles = function(type, mx, my) {
     } else {
         for (let t=0;t<this.tiles.length;t++) {
 
-            if (this.tiles[t].active && buildingSelected != "brown") {
+            if (this.tiles[t].active && buildingSelected != "brown" && my < canvas.height - 100) {
 
                 let tileX = this.tiles[t].x - camera.x;// + this.tiles[t].dimX / 2 - camera.x;
                 let tileY = this.tiles[t].y + this.tiles[t].dimY / 2 - camera.y;
@@ -354,7 +354,7 @@ gameScreen.checkTiles = function(type, mx, my) {
                 
                 }
             } else {
-                if (this.tiles[t].empty) {
+                if (this.tiles[t].empty && my < canvas.height - 100) {
                     if (mx >= (this.tiles[t].x - this.tiles[t].dimX / 2) - camera.x && mx <= this.tiles[t].x + this.tiles[t].dimX / 2 - camera.x &&
                 my >= this.tiles[t].y - camera.y && my <= (this.tiles[t].y + this.tiles[t].dimY) - camera.y) {
                     this.setRowActive(this.tiles[t].row);
