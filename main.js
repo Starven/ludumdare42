@@ -208,6 +208,9 @@ window.setInterval(function() {
                     if (tiles[t].buildings[b].type == "blue") {
                         if (currency < currencyStorage) {
                             currency += 2 * tiles[t].buildings[b].popStorage;//tiles[t].buildings[b].usageCost;
+                            if (currency > currencyStorage) {
+                                currency = currencyStorage;
+                            }
                         }
                        
                     } else {
