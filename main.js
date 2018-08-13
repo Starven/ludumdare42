@@ -56,7 +56,7 @@ var foodStorage = 500;
 var resources = 500;
 var power = 0;
 var powerStorage = 0;
-var currency = 1000;
+var currency = 1005;
 var currencyStorage = 1000;
 
 var cameraMoveX = "none";
@@ -199,6 +199,9 @@ window.setInterval(function() {
             dayTicker++;
         } else {
             food -= population;
+            if (food < 0) {
+                food = 0;
+            }
             dayTicker = 0;
             let tiles = screen.getTiles();
     

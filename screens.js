@@ -144,7 +144,7 @@ gameScreen.render = function() {
                             this.tiles[t].buildings[b].popStorage += 1;
                         } 
 
-                        if (food < 0 && this.tiles[t].buildings[b].popStorage > 0) {
+                        if (food <= 0 && this.tiles[t].buildings[b].popStorage > 0) {
                             this.tiles[t].buildings[b].popStorage -= 1;
                         }
                         
@@ -178,6 +178,9 @@ gameScreen.render = function() {
 
                         if (power > 0) {
                             power -= this.tiles[t].buildings[b].powerCost;
+                            if (power < 0) {
+                                power = 0;
+                            }
                         }
                         
 
@@ -361,6 +364,7 @@ gameScreen.checkTiles = function(type, mx, my) {
                     if (buildingSelected == "brown") {
                         if (resources - getCostByType(buildingSelected) >= 0 && currency - getPriceByType(buildingSelected) >= 0) {
                             this.tiles[t].empty = false;
+                            this.tiles[t].resources = 1000;
                             allActive = true;
                             showGrid = true;
                             resources -= getCostByType(buildingSelected);
